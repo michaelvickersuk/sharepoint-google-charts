@@ -1,0 +1,64 @@
+<!--[if lte IE 10]>
+<p class="dashboardstatus"><img src="/_layouts/images/warn_lg.gif" alt="Warning">Please use a modern web browser such as Google Chrome to access this page.</p>
+<![endif]-->
+
+<!--[if !IE | gt IE 10]><!-->
+<ul id="dashboardmenu">
+<li><a href="./Safety%20Conversation%20Dashboard.aspx?site=Darlington&totalmax=0&#sconsbydate">Darlington, zero submissions this month</a></li>
+<li><a href="./Safety%20Conversation%20Dashboard.aspx?site=Skinningrove&totalmax=0&#sconsbydate">Skinningrove, zero submissions this month</a></li>
+<li><a href="./Safety%20Conversation%20Dashboard.aspx?site=Teesside&totalmax=0&#sconsbydate">Teesside, zero submissions this month</a></li>
+<li><a href="./Safety%20Conversation%20Dashboard.aspx?specialprofiles=1">Skinningrove &amp; Darlington combined</a></li>
+<li><a href="./Safety%20Conversation%20Dashboard%202015.aspx">Year 2015</a></li>
+</ul>
+
+<script type="text/javascript" src='https://www.google.com/jsapi?autoload=%7B%22modules%22%3A%5B%7B%22name%22%3A%22visualization%22%2C%22version%22%3A%221%22%2C%22packages%22%3A%5B%22controls%22%5D%7D%5D%7D'></script><!-- autoload={"modules":[{"name":"visualization","version":"1","packages":["controls"]}]} -->
+<h3>Individual Safety Conversations</h3>
+<div class="chart">
+<div id="sconsuniquebymonth"><div class="dashboardstatus"><img src="/_layouts/images/gears_an.gif" alt="Loading">Please wait while the charts are loaded.</div></div>
+<div class="export"></div>
+</div>
+
+<div class="chart">
+<div id="sconsuniquebyweek"></div>
+<div class="export"></div>
+</div>
+
+<h3>People Involved in Safety Conversations</h3>
+<div class="chart">
+<div id="sconsinvolvedbymonth"></div>
+<div class="export"></div>
+</div>
+
+<div class="chart">
+<div id="sconsinvolvedbyweek"></div>
+<div class="export"></div>
+</div>
+
+<h3>Volume of Safety Conversations</h3>
+<div class="chart">
+<div id="sconsquantitybymonth"></div>
+<div class="export"></div>
+</div>
+
+<div class="chart">
+<div id="sconsquantitybyweek"></div>
+<div class="export"></div>
+</div>
+
+<h3>Personal Safety Conversations</h3>
+<div id="sconsbydate">
+<div id="sconsbydatefilter"></div>
+<div id="sconsbydatetable"></div>
+</div>
+
+<div class="chart">
+<div id="sconsbyperson">
+<div id="sconsbypersonareafilter"></div>
+<div id="sconsbypersonteamfilter"></div>
+<div id="sconsbypersonrotafilter"></div>
+<div id="sconsbypersonquantityfilter"></div>
+<div id="sconsbypersonchart"></div>
+<div class="export"></div>
+</div>
+</div>
+<!--<![endif]-->

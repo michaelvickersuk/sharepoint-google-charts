@@ -1,0 +1,85 @@
+/*
+    Created by: Michael Vickers
+    Customises the layout of pages
+    Styles in this file will be applied to all the pages on the SharePoint
+*/
+
+
+/* Hide column headers on presentational tables:
+    Home Page News
+    Home Page Links
+    Environmental Home Page News
+    Health & Safety Home Page News
+ */
+table#\{5148274B-E48C-465F-AEE9-0FBFD59E77BD\}-\{A0D07C8A-9E3D-43AA-8994-990E2D60A5AB\} .ms-viewheadertr, 
+table#\{25AFEE6E-DE9A-4B69-93EE-1CD76C851CCB\}-\{F4191927-BE6D-4E76-8251-66FB7F426505\} .ms-viewheadertr, 
+table#\{0B07AD93-1446-438E-A53C-C982A1FF129F\}-\{A2956B02-394D-43AD-94BF-E93FE7933A41\} .ms-viewheadertr, 
+table#\{BBC2A16B-5BD7-434D-8596-14A7C399CBBB\}-\{F5251ABF-FFE8-4C80-BB85-BC8EB74FE33C\} .ms-viewheadertr
+ { display: none !important; }
+ 
+/* Set image max width and height for noticeboard tables:
+    Home Page News
+    Environmental Home Page News
+    Health & Safety Home Page News
+ */
+table#\{5148274B-E48C-465F-AEE9-0FBFD59E77BD\}-\{A0D07C8A-9E3D-43AA-8994-990E2D60A5AB\} div img,
+table#\{0B07AD93-1446-438E-A53C-C982A1FF129F\}-\{A2956B02-394D-43AD-94BF-E93FE7933A41\} div img, 
+table#\{BBC2A16B-5BD7-434D-8596-14A7C399CBBB\}-\{F5251ABF-FFE8-4C80-BB85-BC8EB74FE33C\} div img 
+ { width: 100%; max-width: 100%; max-height: 100%; }
+
+/* Display all items in Gantt Charts, rather than scrolling */
+ table.ms-ganttOuterTable div.ms-ganttDivNotIE {
+	 height: auto !important;
+ }
+
+/* Attachment previews */
+img.attachmentpreview { width: 600px; height: auto; border: 0; }        /* Constrain the width of the image to the default SP form width, resizing proportionally */
+iframe.attachmentpreview { width: 600px; height: 300px; }
+
+
+/* Work Pack Register */
+.workpackregister.valid { color: #0f0; background: #0f0; border: 1px solid #0f0; }           /* Same border color as background so that when the page is printed the Index number field still has some colour formatting (CSS backgrounds aren't printed by default) */
+.workpackregister.warning { color: #f90; background: #f90; border: 1px solid #f90; }
+.workpackregister.expired { color: #f00; background: #f00; border: 1px solid #f00; }
+
+
+/* Dashboards */
+.dashboardstatus, #loading { text-align: center; }
+.dashboardstatus img, #loading img { margin: 2em auto; display: block; }
+
+#dashboardmenu ul, #dashboardmenu li { margin: 0; }
+#dashboardmenu li { display: inline; list-style-type: none; padding-right: 2em; }
+
+.chart { float: left; }
+.chart .export { margin-bottom: 5em; }
+.chart .export img a { border: 0; }
+h3 { clear: both; }
+
+#sconsuniquebymonth, #sconsuniquebyweek, #sconsinvolvedbymonth, #sconsinvolvedbyweek, #sconsquantitybymonth, #sconsquantitybyweek, #sconsbypersonchart, #lubricationusagechart { width: 530px; height: 450px; }
+#sconsbydatetable, #lubricationusagebydatetable { display: none; }
+
+#sconsbydatefilter, #sconsbypersonareafilter, #sconsbypersonteamfilter, #sconsbypersonrotafilter, #sconsbypersonquantityfilter, #lubricationusagebydatefilter, #lubricationusageplantfilter, #lubricationusagematerialfilter, #lubricationusagedestinationfilter { margin-bottom: 1em; }
+#sconsbypersonareafilter, #sconsbypersonteamfilter, #sconsbypersonrotafilter { float: left; width: 220px; }
+
+
+@media print {
+    /* Optimise the layout for printing by removing unnecessary elements and making content mostly greyscale */
+    
+    .ms-sbtable, .ms-menutoolbar, .ms-informationbar, table.ms-toolbar, #dashboardmenu, .export, .google-visualization-controls-rangefilter, .google-visualization-controls-categoryfilter  { display: none !important; }
+
+    .ms-sitetitle A { color: lightgray !important; }
+
+    .ms-cal-topday-today div { border: solid 1px #000 !important; }                     /* Calendar today highlight */
+
+    /* View pages */
+    .ms-vb-icon img { visibility: hidden !important; }                            /* Type and Edit icons */  
+    .ms-formlabel { color: #000 !important; }                                 /* Attachments row heading */
+
+    /* Add/Edit pages */
+    .ms-formvalidation { color: #000 !important; }
+
+    .ms-formlabel, .ms-formbody { border-color: lightgray !important; }       /* Deviding lines used on DispForm.aspx pages */
+
+    img { filter: url("data:image/svg+xml;utf8,<svg%20xmlns='http://www.w3.org/2000/svg'><filter%20id='grayscale'><feColorMatrix%20type='matrix'%20values='0.3333%200.3333%200.3333%200%200%200.3333%200.3333%200.3333%200%200%200.3333%200.3333%200.3333%200%200%200%200%200%201%200'/></filter></svg>#grayscale") !important; filter: grayscale(100%) !important; -webkit-filter: grayscale(100%) !important; -moz-filter: grayscale(100%) !important; -ms-filter: grayscale(100%) !important; -o-filter: grayscale(100%) !important; filter: gray !important; }
+    table#\{5148274B-E48C-465F-AEE9-0FBFD59E77BD\}-\{A0D07C8A-9E3D-43AA-8994-990E2D60A5AB\} img, tr#idAttachmentsRow img { filter: none !important; -webkit-filter: none !important; -moz-filter: none !important; -ms-filter: none !important; -o-filter: none !important; }                 /* Excludes from being grayscale: News feed, attachment previews */
+}
